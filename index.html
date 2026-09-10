@@ -3,455 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Oscar Ojeda — Cursos de marketing para emprendedores de servicios</title>
-<meta name="description" content="Cursos para emprendedores de servicios basados en comportamiento humano. Sin plantillas que copiar: entiende los fundamentos y consigue clientes por tu cuenta.">
-<style>
-  :root {
-    color-scheme: light;
-    --fondo: #ffffff;
-    --fondo-suave: #f5f7fa;
-    --texto: #10131a;
-    --texto-suave: #4d5766;
-    --azul: #16305c;
-    --azul-medio: #23508f;
-    --azul-claro: #e8eef8;
-    --linea: #e0e5ec;
-    --sombra: 0 1px 2px rgba(16, 19, 26, 0.04), 0 8px 24px rgba(16, 19, 26, 0.06);
-  }
-
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-
-  body {
-    background: var(--fondo);
-    color: var(--texto);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 17px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .contenedor {
-    max-width: 64rem;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .estrecho { max-width: 44rem; }
-
-  a { color: inherit; }
-
-  /* ---------- Cabecera ---------- */
-
-  header {
-    border-bottom: 1px solid var(--linea);
-    position: sticky;
-    top: 0;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(8px);
-    z-index: 10;
-  }
-
-  .barra {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1.1rem 0;
-  }
-
-  .marca {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-weight: 600;
-    font-size: 1.05rem;
-    letter-spacing: -0.015em;
-    text-decoration: none;
-  }
-
-  .punto {
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background: var(--texto);
-    flex-shrink: 0;
-  }
-
-  .barra nav {
-    display: flex;
-    gap: 1.5rem;
-    font-size: 0.95rem;
-  }
-
-  .barra nav a {
-    color: var(--texto-suave);
-    text-decoration: none;
-  }
-
-  .barra nav a:hover { color: var(--azul-medio); }
-
-  /* ---------- Hero ---------- */
-
-  .hero {
-    padding: 5.5rem 0 4rem;
-    background:
-      radial-gradient(60rem 30rem at 75% -10%, var(--azul-claro), transparent 70%),
-      var(--fondo);
-  }
-
-  /* Fondo decorativo: retícula de puntos y aros, dibujados con CSS */
-
-  .hero, .pruebas, .cursos, .contacto {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero > *, .pruebas > *, .cursos > *, .contacto > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, rgba(22, 48, 92, 0.18) 1px, transparent 1px);
-    background-size: 24px 24px;
-    -webkit-mask-image: radial-gradient(44rem 22rem at 80% 6%, #000, transparent 72%);
-    mask-image: radial-gradient(44rem 22rem at 80% 6%, #000, transparent 72%);
-    pointer-events: none;
-  }
-
-  .pruebas::before,
-  .cursos::before {
-    content: "";
-    position: absolute;
-    width: 28rem;
-    height: 28rem;
-    right: -9rem;
-    top: -11rem;
-    border-radius: 50%;
-    border: 1px solid rgba(22, 48, 92, 0.11);
-    box-shadow: inset 0 0 0 4rem rgba(22, 48, 92, 0.03);
-    pointer-events: none;
-  }
-
-  .cursos::before { left: -11rem; right: auto; top: auto; bottom: -13rem; }
-
-  .contacto::before,
-  .contacto::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    pointer-events: none;
-  }
-
-  .contacto::before { width: 30rem; height: 30rem; right: -8rem; top: -12rem; }
-  .contacto::after { width: 18rem; height: 18rem; right: 4rem; bottom: -9rem; }
-
-  .hero-rejilla {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 3.5rem;
-    align-items: center;
-  }
-
-  .etiqueta {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--azul-medio);
-    background: var(--azul-claro);
-    border-radius: 100px;
-    padding: 0.35rem 0.85rem;
-    margin-bottom: 1.4rem;
-  }
-
-  h1 {
-    font-size: clamp(2.1rem, 4.6vw, 3.35rem);
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    font-weight: 650;
-    margin: 0 0 1.4rem;
-    color: var(--azul);
-  }
-
-  h1 .remate {
-    display: block;
-    color: var(--texto);
-    margin-top: 0.5rem;
-  }
-
-  .hero p {
-    font-size: 1.15rem;
-    color: var(--texto-suave);
-    margin: 0 0 1.1rem;
-  }
-
-  .hero p:last-of-type { margin-bottom: 2rem; }
-
-  .botones {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-  }
-
-  .boton {
-    display: inline-block;
-    padding: 0.85rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-    border: 1px solid transparent;
-  }
-
-  .boton-primario {
-    background: var(--azul);
-    color: #ffffff;
-  }
-
-  .boton-primario:hover { background: var(--azul-medio); }
-
-  .boton-secundario {
-    background: var(--fondo);
-    color: var(--azul);
-    border-color: var(--linea);
-  }
-
-  .boton-secundario:hover { border-color: var(--azul-medio); }
-
-  /* Composición gráfica del hero (el punto como identidad) */
-
-  .figura {
-    position: relative;
-    aspect-ratio: 4 / 5;
-    border-radius: 14px;
-    background: linear-gradient(160deg, var(--azul) 0%, #0d1f3d 100%);
-    overflow: hidden;
-    box-shadow: var(--sombra);
-  }
-
-  .figura span {
-    position: absolute;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-  }
-
-  .aro-1 { width: 62%; height: 0; padding-bottom: 62%; top: 12%; left: 12%; }
-  .aro-2 { width: 86%; height: 0; padding-bottom: 86%; top: 26%; left: 32%; }
-  .aro-3 { width: 40%; height: 0; padding-bottom: 40%; top: 54%; left: -6%; }
-
-  .figura .lleno {
-    width: 16%;
-    height: 0;
-    padding-bottom: 16%;
-    top: 34%;
-    left: 35%;
-    background: #ffffff;
-    border: 0;
-  }
-
-  /* ---------- Pruebas ---------- */
-
-  .pruebas {
-    border-top: 1px solid var(--linea);
-    border-bottom: 1px solid var(--linea);
-    background: var(--fondo-suave);
-    padding: 2.5rem 0;
-  }
-
-  .pruebas-rejilla {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  .prueba .cifra {
-    font-size: 2rem;
-    font-weight: 650;
-    letter-spacing: -0.03em;
-    color: var(--azul);
-    line-height: 1.1;
-    display: block;
-    margin-bottom: 0.35rem;
-  }
-
-  .prueba p {
-    margin: 0;
-    color: var(--texto-suave);
-    font-size: 0.98rem;
-  }
-
-  /* ---------- Secciones ---------- */
-
-  section.bloque { padding: 4.5rem 0; }
-
-  .titulillo {
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-    font-weight: 600;
-    color: var(--azul-medio);
-    margin: 0 0 0.9rem;
-  }
-
-  h2 {
-    font-size: clamp(1.55rem, 3vw, 2.1rem);
-    line-height: 1.2;
-    letter-spacing: -0.025em;
-    font-weight: 650;
-    margin: 0 0 1rem;
-    color: var(--texto);
-  }
-
-  .entradilla {
-    font-size: 1.1rem;
-    color: var(--texto-suave);
-    margin: 0 0 2.5rem;
-    max-width: 40rem;
-  }
-
-  /* Alternativas */
-
-  .alternativas {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .alternativa {
-    padding: 1.5rem;
-    background: var(--fondo);
-    border: 1px solid var(--linea);
-    border-radius: 10px;
-  }
-
-  .alternativa h3 {
-    font-size: 1.02rem;
-    font-weight: 600;
-    margin: 0 0 0.4rem;
-  }
-
-  .alternativa p {
-    margin: 0;
-    color: var(--texto-suave);
-    font-size: 0.98rem;
-  }
-
-  .alternativa.propia {
-    background: var(--azul);
-    border-color: var(--azul);
-    color: #ffffff;
-    grid-column: 1 / -1;
-  }
-
-  .alternativa.propia h3 { color: #ffffff; }
-
-  .alternativa.propia p { color: rgba(255, 255, 255, 0.82); }
-
-  /* Cursos */
-
-  .cursos { background: var(--fondo-suave); border-top: 1px solid var(--linea); }
-
-  .lista-cursos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .curso {
-    display: flex;
-    flex-direction: column;
-    padding: 1.6rem;
-    background: var(--fondo);
-    border: 1px solid var(--linea);
-    border-radius: 12px;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: var(--sombra);
-  }
-
-  .curso:hover { border-color: var(--azul-medio); }
-
-  .curso h3 {
-    font-size: 1.12rem;
-    font-weight: 600;
-    margin: 0 0 0.4rem;
-    color: var(--azul);
-    letter-spacing: -0.015em;
-  }
-
-  .curso p {
-    margin: 0 0 1.2rem;
-    color: var(--texto-suave);
-    font-size: 0.98rem;
-    flex-grow: 1;
-  }
-
-  .curso .flecha {
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: var(--azul-medio);
-  }
-
-  /* Contacto */
-
-  .contacto {
-    background: var(--azul);
-    color: #ffffff;
-    padding: 4rem 0;
-  }
-
-  .contacto h2 { color: #ffffff; margin-bottom: 0.8rem; }
-
-  .contacto p {
-    color: rgba(255, 255, 255, 0.82);
-    font-size: 1.1rem;
-    margin: 0 0 1.8rem;
-    max-width: 34rem;
-  }
-
-  .contacto .boton-primario {
-    background: #ffffff;
-    color: var(--azul);
-  }
-
-  .contacto .boton-primario:hover { background: var(--azul-claro); }
-
-  /* Pie */
-
-  footer {
-    padding: 2rem 0;
-    border-top: 1px solid var(--linea);
-    color: var(--texto-suave);
-    font-size: 0.92rem;
-  }
-
-  footer .barra { padding: 0; }
-
-  /* ---------- Móvil ---------- */
-
-  @media (max-width: 52rem) {
-    .hero-rejilla { grid-template-columns: 1fr; gap: 2.5rem; }
-    .figura { max-width: 20rem; aspect-ratio: 1 / 1; }
-    .lista-cursos { grid-template-columns: 1fr; }
-    .alternativas { grid-template-columns: 1fr; }
-    .pruebas-rejilla { grid-template-columns: 1fr; gap: 1.5rem; }
-  }
-
-  @media (max-width: 34rem) {
-    body { font-size: 16px; }
-    .hero { padding: 3.5rem 0 3rem; }
-    section.bloque { padding: 3.25rem 0; }
-    .barra nav { display: none; }
-    .boton { width: 100%; text-align: center; }
-  }
-</style>
+<title>Cursos de marketing para emprendedores de servicios — Oscar Ojeda</title>
+<meta name="description" content="Cursos basados en comportamiento humano para emprendedores de servicios. Sin plantillas que copiar: entiende los fundamentos y consigue clientes por tu cuenta. Feedback por correo en 24-48 horas.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
@@ -466,6 +21,8 @@
           <a href="curso-marketing.html">Marketing</a>
           <a href="curso-cliente-ideal.html">Cliente ideal</a>
           <a href="curso-propuesta-de-valor.html">Propuesta de valor</a>
+          <a href="sobre-mi.html">Sobre mí</a>
+          <a href="contacto.html">Contacto</a>
         </nav>
       </div>
     </div>
@@ -509,8 +66,8 @@
             <p>alumnos aplicándolo, que cuentan que han cambiado cómo comunican y les está yendo mejor.</p>
           </div>
           <div class="prueba">
-            <span class="cifra">Por correo</span>
-            <p>Feedback incluido. Me escribes, te contesto yo. Los cursos de plataformas grandes no lo tienen a este precio.</p>
+            <span class="cifra">24-48 h</span>
+            <p>es lo que tardo en contestarte por correo. Escribes cuando quieras, te contesto yo.</p>
           </div>
           <div class="prueba">
             <span class="cifra">Sin plantillas</span>
@@ -581,12 +138,24 @@
       </div>
     </section>
 
+    <!-- Quién está detrás -->
+    <section class="bloque suave">
+      <div class="contenedor">
+        <p class="titulillo">Quién está detrás</p>
+        <h2>Diez años haciendo marketing para empresas.</h2>
+        <p>Y al final, siempre lo mismo: la misma plantilla con el logo cambiado. Me cansé. Ahora enseño a los que empiezan solos, porque a esos no les ayuda nadie.</p>
+        <p style="margin-top:1.4rem"><a href="sobre-mi.html">Leer la historia entera →</a></p>
+      </div>
+    </section>
+
     <!-- Contacto -->
     <section class="contacto">
       <div class="contenedor">
         <h2>¿Dudas antes de empezar?</h2>
-        <p>Escríbeme y te contesto yo. Si el curso no es para ti, te lo digo.</p>
-        <a class="boton boton-primario" href="mailto:contacto@oscarojeda.net">contacto@oscarojeda.net</a>
+        <p>Escríbeme y te contesto yo, en 24 o 48 horas. Si el curso no es para ti, te lo digo.</p>
+        <div class="botones">
+          <a class="boton boton-primario" href="contacto.html">Escríbeme</a>
+        </div>
       </div>
     </section>
 
@@ -599,7 +168,13 @@
           <span class="punto"></span>
           Oscar Ojeda
         </a>
-        <span>contacto@oscarojeda.net</span>
+        <nav>
+          <a href="curso-marketing.html">Marketing</a>
+          <a href="curso-cliente-ideal.html">Cliente ideal</a>
+          <a href="curso-propuesta-de-valor.html">Propuesta de valor</a>
+          <a href="sobre-mi.html">Sobre mí</a>
+          <a href="contacto.html">contacto@oscarojeda.net</a>
+        </nav>
       </div>
     </div>
   </footer>
