@@ -39,3 +39,18 @@ Cliente: emprendedores que ofrecen servicios pero no despegan.
 - Le angustia no tener clientes y no llegar a fin de mes
 - Siente que no sabe llevar su negocio ni hacerlo funcionar
 - Tiene miedo a que su entorno (familia, pareja, amigos) vea que fracasó — y a llegar él mismo a esa conclusión
+
+## Mapa de la web
+
+Estructura silo: una portada que reparte y una página por cada servicio.
+
+- **Portada** — presenta quién eres, qué haces y para quién. Reparte hacia los tres cursos.
+- **Curso de marketing para emprendedores** — página de servicio.
+- **Curso de cliente ideal** — página de servicio.
+- **Curso de propuesta de valor** — página de servicio.
+- **Contacto** — pendiente, se construye en la lección 5.
+- **Sobre mí** — pendiente, se construye en la lección 5.
+
+Los tres cursos se venden por separado, por eso cada uno tiene su propia página.
+
+**Enlazado:** toda página enlaza a la portada. La portada enlaza a todas. Las páginas de servicio se enlazan entre sí.
