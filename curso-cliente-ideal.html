@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curso de cliente ideal — Oscar Ojeda</title>
+<meta name="description" content="Curso para emprendedores de servicios que no saben a quién le venden. Sales con tu cliente definido, basado en comportamiento humano.">
+<style>
+  :root {
+    color-scheme: light;
+    --fondo: #ffffff;
+    --fondo-suave: #f5f7fa;
+    --texto: #10131a;
+    --texto-suave: #4d5766;
+    --azul: #16305c;
+    --azul-medio: #23508f;
+    --azul-claro: #e8eef8;
+    --linea: #e0e5ec;
+    --sombra: 0 1px 2px rgba(16, 19, 26, 0.04), 0 8px 24px rgba(16, 19, 26, 0.06);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .contenedor { max-width: 64rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  a { color: inherit; }
+
+  header {
+    border-bottom: 1px solid var(--linea);
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+  }
+
+  .barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 0;
+  }
+
+  .marca {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: -0.015em;
+    text-decoration: none;
+  }
+
+  .punto {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--texto);
+    flex-shrink: 0;
+  }
+
+  .barra nav { display: flex; gap: 1.5rem; font-size: 0.95rem; }
+  .barra nav a { color: var(--texto-suave); text-decoration: none; }
+  .barra nav a:hover { color: var(--azul-medio); }
+  .barra nav a.activo { color: var(--azul); font-weight: 600; }
+
+  footer {
+    padding: 2rem 0;
+    border-top: 1px solid var(--linea);
+    color: var(--texto-suave);
+    font-size: 0.92rem;
+  }
+
+  footer .barra { padding: 0; }
+
+  .migas { padding: 1.5rem 0 0; font-size: 0.92rem; color: var(--texto-suave); }
+  .migas a { color: var(--azul-medio); text-decoration: none; }
+  .migas a:hover { text-decoration: underline; }
+
+  .cabecera-curso {
+    padding: 2rem 0 3.5rem;
+    background:
+      radial-gradient(55rem 26rem at 70% -20%, var(--azul-claro), transparent 70%),
+      var(--fondo);
+  }
+
+  /* Fondo decorativo: retícula de puntos y aros, dibujados con CSS */
+
+  .cabecera-curso, section.bloque.suave, .contacto {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cabecera-curso > *, section.bloque.suave > *, .contacto > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cabecera-curso::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(22, 48, 92, 0.18) 1px, transparent 1px);
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(40rem 20rem at 80% 6%, #000, transparent 72%);
+    mask-image: radial-gradient(40rem 20rem at 80% 6%, #000, transparent 72%);
+    pointer-events: none;
+  }
+
+  section.bloque.suave::before,
+  .contacto::before {
+    content: "";
+    position: absolute;
+    width: 26rem;
+    height: 26rem;
+    right: -8rem;
+    top: -10rem;
+    border-radius: 50%;
+    border: 1px solid rgba(22, 48, 92, 0.11);
+    box-shadow: inset 0 0 0 3.5rem rgba(22, 48, 92, 0.03);
+    pointer-events: none;
+  }
+
+  .etiqueta {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--azul-medio);
+    background: var(--azul-claro);
+    border-radius: 100px;
+    padding: 0.35rem 0.85rem;
+    margin-bottom: 1.3rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4.2vw, 3rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    font-weight: 650;
+    margin: 0 0 1.2rem;
+    color: var(--azul);
+    max-width: 22ch;
+  }
+
+  .cabecera-curso .entradilla {
+    font-size: 1.18rem;
+    color: var(--texto-suave);
+    margin: 0;
+    max-width: 40rem;
+  }
+
+  section.bloque { padding: 3.5rem 0; border-top: 1px solid var(--linea); }
+  section.bloque.suave { background: var(--fondo-suave); }
+
+  .titulillo {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-weight: 600;
+    color: var(--azul-medio);
+    margin: 0 0 0.9rem;
+  }
+
+  h2 {
+    font-size: clamp(1.45rem, 2.8vw, 1.95rem);
+    line-height: 1.22;
+    letter-spacing: -0.025em;
+    font-weight: 650;
+    margin: 0 0 1.1rem;
+    color: var(--texto);
+    max-width: 26ch;
+  }
+
+  .bloque p {
+    font-size: 1.08rem;
+    color: var(--texto-suave);
+    margin: 0 0 1rem;
+    max-width: 42rem;
+  }
+
+  .bloque p:last-child { margin-bottom: 0; }
+  .bloque p strong { color: var(--texto); font-weight: 600; }
+
+  .contacto { background: var(--fondo-suave); }
+
+  .boton {
+    display: inline-block;
+    padding: 0.85rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+    background: var(--azul);
+    color: #ffffff;
+  }
+
+  .boton:hover { background: var(--azul-medio); }
+
+  .otros { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+  .otro {
+    display: block;
+    padding: 1.5rem;
+    background: var(--fondo);
+    border: 1px solid var(--linea);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--sombra);
+  }
+
+  .otro:hover { border-color: var(--azul-medio); }
+
+  .otro h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.35rem;
+    color: var(--azul);
+    letter-spacing: -0.015em;
+  }
+
+  .otro p { margin: 0 0 0.9rem; color: var(--texto-suave); font-size: 0.98rem; }
+  .otro .flecha { font-size: 0.92rem; font-weight: 600; color: var(--azul-medio); }
+
+  .volver { margin-top: 1.5rem; font-size: 0.98rem; }
+  .volver a { color: var(--azul-medio); font-weight: 500; }
+
+  @media (max-width: 52rem) {
+    .otros { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 34rem) {
+    body { font-size: 16px; }
+    .barra nav { display: none; }
+    section.bloque { padding: 2.75rem 0; }
+    .boton { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="contenedor">
+      <div class="barra">
+        <a class="marca" href="index.html">
+          <span class="punto"></span>
+          Oscar Ojeda
+        </a>
+        <nav>
+          <a href="curso-marketing.html">Marketing</a>
+          <a class="activo" href="curso-cliente-ideal.html">Cliente ideal</a>
+          <a href="curso-propuesta-de-valor.html">Propuesta de valor</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="contenedor">
+      <p class="migas"><a href="index.html">Inicio</a> · Cliente ideal</p>
+    </div>
+
+    <section class="cabecera-curso">
+      <div class="contenedor">
+        <span class="etiqueta">Curso grabado</span>
+        <h1>Cliente ideal</h1>
+        <p class="entradilla">Saber a quién le vendes.</p>
+      </div>
+    </section>
+
+    <!-- Dolor -->
+    <section class="bloque">
+      <div class="contenedor">
+        <p class="titulillo">Con qué llegas</p>
+        <h2>Sin saber a quién vender.</h2>
+        <p>Ofreces tu servicio, pero si te preguntan a quién se lo vendes, la respuesta se te queda ancha. A quien lo necesite. A cualquiera que quiera esto.</p>
+        <p>Y ese es el problema: cuando le hablas a todo el mundo, no te reconoce nadie. El que podría ser tu cliente lee lo que escribes y no le suena a él, así que sigue buscando.</p>
+      </div>
+    </section>
+
+    <!-- Deseo -->
+    <section class="bloque suave">
+      <div class="contenedor">
+        <p class="titulillo">Con qué sales</p>
+        <h2>Con tu cliente definido.</h2>
+        <p>No una ficha inventada con nombre y edad. <strong>Tu cliente</strong>: qué le duele, qué quiere, en qué momento te busca y con qué palabras lo cuenta él.</p>
+        <p>A partir de ahí, todo lo demás es más fácil. Sabes a quién le hablas, y por eso sabes qué decir.</p>
+      </div>
+    </section>
+
+    <!-- Qué es -->
+    <section class="bloque">
+      <div class="contenedor">
+        <p class="titulillo">Qué es este curso</p>
+        <h2>La versión a fondo.</h2>
+        <p>En el <a href="curso-marketing.html">curso de marketing para emprendedores</a> esto se toca por encima: lo justo para que puedas trabajar. Aquí es todo el curso.</p>
+        <p>Mismo enfoque que el resto de lo que hago: comportamiento humano, no plantillas. No te doy una ficha para rellenar; te enseño a mirar a tu cliente y a sacar tú las conclusiones, para que puedas repetirlo cuando tu negocio cambie.</p>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="bloque contacto">
+      <div class="contenedor">
+        <p class="titulillo">Dar el paso</p>
+        <h2>¿Dudas antes de empezar?</h2>
+        <p style="margin-bottom:1.8rem">Escríbeme y te contesto yo. Si por lo que me cuentes veo que este curso no es para ti, te lo digo.</p>
+        <a class="boton" href="mailto:contacto@oscarojeda.net">contacto@oscarojeda.net</a>
+      </div>
+    </section>
+
+    <!-- Otros cursos -->
+    <section class="bloque">
+      <div class="contenedor">
+        <p class="titulillo">Los otros cursos</p>
+        <div class="otros">
+          <a class="otro" href="curso-marketing.html">
+            <h3>Marketing para emprendedores</h3>
+            <p>Entender el comportamiento humano para conseguir clientes por tu cuenta, sin copiar plantillas.</p>
+            <span class="flecha">Ver el curso →</span>
+          </a>
+          <a class="otro" href="curso-propuesta-de-valor.html">
+            <h3>Propuesta de valor</h3>
+            <p>Saber decir por qué te eligen a ti y no a otro.</p>
+            <span class="flecha">Ver el curso →</span>
+          </a>
+        </div>
+        <p class="volver"><a href="index.html">← Volver a la portada</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <div class="barra">
+        <a class="marca" href="index.html">
+          <span class="punto"></span>
+          Oscar Ojeda
+        </a>
+        <span>contacto@oscarojeda.net</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
