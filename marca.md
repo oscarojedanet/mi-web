@@ -24,6 +24,29 @@ Para quién: emprendedor de servicios que ya ha probado cursos de marketing de r
 
 Por qué elegirlo: no enseña a copiar una plantilla, enseña a entender el porqué de cada cosa para poder aplicarlo a cualquier situación. 30 alumnos aplicándolo con resultados. Feedback por correo incluido. Precio de entrada bajo para lo que incluye.
 
+## Los cursos
+
+Se venden por separado. El de marketing toca por encima lo que los otros dos hacen a fondo.
+
+### Marketing para emprendedores
+
+- **Llega con:** la agenda irregular, semanas buenas y malas, y escaldado de cursos de marketing de redes que no le funcionaron.
+- **Sale con:** entender por qué compra la gente y ser capaz de aplicarlo a su negocio por su cuenta, en cualquier situación.
+- **Cinco lecciones:** 1) Por qué compra la gente: fundamentos del comportamiento humano aplicados a servicios. 2) A quién le hablas: deseos, dolores y nivel de conciencia de tu cliente. 3) Qué le dices: tu propuesta de valor y la prueba de que es tuya. 4) Dónde y cómo lo dices: llevarlo a tus canales sin copiar plantillas. 5) Cómo lo afinas: qué escuchar de tus clientes y qué señales avisan de que algo falla.
+- **Feedback por correo:** puede escribir cuando quiera, sin límite. Respuesta en 24-48 horas, contestada por Oscar.
+
+### Cliente ideal
+
+- **Llega con:** no saber a quién vender.
+- **Sale con:** su cliente definido.
+- Versión a fondo de lo que el curso de marketing toca por encima en su lección 2.
+
+### Propuesta de valor
+
+- **Llega con:** no saber por qué le eligen.
+- **Sale con:** su frase.
+- Versión a fondo de lo que el curso de marketing toca por encima en su lección 3.
+
 ## Deseos del cliente
 
 Cliente: emprendedores que ofrecen servicios pero no despegan.
