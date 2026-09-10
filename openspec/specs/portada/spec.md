@@ -21,15 +21,11 @@ La portada SHALL incluir una presentación breve (dos o tres frases) escrita con
 - **THEN** entiende que los cursos son para emprendedores de servicios que no consiguen clientes estables, y que no se basan en plantillas sino en entender el porqué
 
 ### Requirement: Los tres cursos con su enlace
-La portada SHALL listar los tres cursos (marketing para emprendedores, cliente ideal, propuesta de valor), cada uno con una línea que diga de qué va, y cada uno enlazado a su página de servicio.
+La portada SHALL listar los tres cursos (marketing para emprendedores, cliente ideal, propuesta de valor), cada uno con una línea que diga de qué va, y cada uno enlazado a su página de servicio. Los tres enlaces SHALL llevar a una página existente.
 
 #### Scenario: El visitante busca un curso concreto
 - **WHEN** el visitante pulsa el nombre de uno de los tres cursos
-- **THEN** el enlace le lleva a la página de ese curso (`curso-marketing.html`, `curso-cliente-ideal.html` o `curso-propuesta-de-valor.html`)
-
-#### Scenario: Las páginas de servicio todavía no existen
-- **WHEN** se pulsa un enlace antes de construir las páginas de servicio
-- **THEN** el enlace da error 404, y es un estado esperado y temporal hasta la siguiente obra
+- **THEN** el enlace le lleva a la página de ese curso (`curso-marketing.html`, `curso-cliente-ideal.html` o `curso-propuesta-de-valor.html`), que existe y habla de ese curso
 
 ### Requirement: Vía de contacto
 La portada SHALL terminar con el correo de contacto contacto@oscarojeda.net, pulsable para abrir el gestor de correo.
