@@ -47,6 +47,16 @@ Se venden por separado. El de marketing toca por encima lo que los otros dos hac
 - **Sale con:** su frase.
 - Versión a fondo de lo que el curso de marketing toca por encima en su lección 3.
 
+## Sobre mí (la historia de Oscar)
+
+En sus palabras, confirmada por él:
+
+- Diez años haciendo marketing para empresas.
+- Se cansó de repartir siempre la misma plantilla con el logo cambiado: funcionaba más o menos, pero nadie aprendía nada.
+- De esos diez años se llevó lo que hay debajo: por qué compra la gente. Comportamiento humano, no trucos.
+- Eligió enseñar a los que empiezan solos en vez de a empresas. No porque sea mejor negocio: **porque a los que empiezan solos no les ayuda nadie**. Se apañan con vídeos sueltos y cursos de plantillas, justo de lo que él venía huyendo.
+- De ahí salen las dos decisiones de sus cursos: enseñar el porqué en vez de dar pasos que copiar, y contestar él mismo los correos.
+
 ## Deseos del cliente
 
 Cliente: emprendedores que ofrecen servicios pero no despegan.
