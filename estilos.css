@@ -32,12 +32,14 @@ a { color: inherit; }
 
 /* ---------- Cabecera y pie ---------- */
 
+/* Fondo sólido y sin desenfoque. Además de ser decoración de más, el
+   desenfoque hacía que el panel del menú se colocara dentro de la cabecera
+   en vez de sobre toda la pantalla. */
 header {
   border-bottom: 1px solid var(--linea);
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
+  background: var(--fondo);
   z-index: 10;
 }
 
@@ -67,10 +69,99 @@ header {
   flex-shrink: 0;
 }
 
-.barra nav { display: flex; gap: 1.35rem; font-size: 0.95rem; }
-.barra nav a { color: var(--texto-suave); text-decoration: none; white-space: nowrap; }
-.barra nav a:hover { color: var(--azul-medio); }
-.barra nav a.activo { color: var(--azul); font-weight: 600; }
+/* Menú de pantallas anchas: los enlaces en línea. */
+
+.menu-ancho { display: flex; gap: 1.35rem; font-size: 0.95rem; }
+.menu-ancho a { color: var(--texto-suave); text-decoration: none; white-space: nowrap; }
+.menu-ancho a:hover { color: var(--azul-medio); }
+.menu-ancho a.activo { color: var(--azul); font-weight: 600; }
+
+.boton-cabecera {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--linea);
+  background: var(--fondo);
+  color: var(--azul);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.boton-cabecera:hover { border-color: var(--azul); }
+
+/* Menú de pantallas estrechas. Es un <details>: el navegador ya sabe abrirlo
+   y cerrarlo, se maneja con el teclado y los lectores de pantalla lo anuncian.
+   Por eso no hace falta ni una línea de JavaScript. */
+
+.menu-movil { display: none; }
+
+/* La marca y el botón se quedan por encima del panel, para que la cabecera
+   siga visible y se pueda cerrar el menú desde donde se abrió. */
+.barra .marca, .menu-movil > summary { position: relative; z-index: 1; }
+
+.menu-movil > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 44px;
+  padding: 0 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--linea);
+  background: var(--fondo);
+  color: var(--azul);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Quitar el triángulo que el navegador pone por defecto. */
+.menu-movil > summary::-webkit-details-marker { display: none; }
+.menu-movil > summary::marker { content: ""; }
+
+.menu-movil > summary .barras,
+.menu-movil > summary .aspa { display: block; }
+.menu-movil[open] > summary .barras { display: none; }
+.menu-movil:not([open]) > summary .aspa { display: none; }
+
+.menu-movil > nav {
+  position: fixed;
+  inset: 0;
+  background: var(--fondo);
+  padding: 5.5rem 1.5rem 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-movil > nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.05rem 0;
+  border-bottom: 1px solid var(--linea);
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.menu-movil > nav a:hover { color: var(--azul-medio); }
+.menu-movil > nav a.activo { color: var(--azul); }
+
+.menu-movil > nav .correo-menu {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-bottom: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--azul-medio);
+}
 
 footer {
   padding: 2rem 0;
@@ -550,11 +641,13 @@ section.bloque.suave::before {
   .alternativas { grid-template-columns: 1fr; }
   .pruebas-rejilla { grid-template-columns: 1fr; gap: 1.5rem; }
   .otros { grid-template-columns: 1fr; }
-  .barra nav { gap: 1rem; font-size: 0.9rem; }
-}
 
-@media (max-width: 40rem) {
-  .barra nav { display: none; }
+  /* Por debajo de este ancho los enlaces ya no caben en línea: se esconde el
+     menú ancho y aparece el botón que despliega el panel. Nunca se esconde el
+     menú sin dejar forma de abrirlo. */
+  .menu-ancho { display: none; }
+  .boton-cabecera { display: none; }
+  .menu-movil { display: block; }
 }
 
 @media (max-width: 34rem) {
