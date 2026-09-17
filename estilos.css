@@ -1,6 +1,34 @@
 /* Estilos comunes de la web de Oscar Ojeda.
    Un solo sitio para todo: cambiar un color aquí lo cambia en las seis páginas. */
 
+/* ---------- La letra ----------
+
+   Geist, licencia SIL Open Font License, guardada en fuentes/ dentro del
+   propio proyecto. No se enlaza desde el servidor de nadie: el día que lo
+   muevan, la web se seguiría viendo igual.
+
+   Dos pesos y no más: 400 para el texto, 600 para los titulares. Cada
+   archivo son 40 KB, y con estos dos hay contraste de sobra.
+
+   font-display: swap significa que el texto se lee con la letra del
+   sistema mientras Geist se descarga, en vez de quedarse invisible. */
+
+@font-face {
+  font-family: "Geist";
+  src: url("fuentes/Geist-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("fuentes/Geist-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
   --fondo: #ffffff;
@@ -20,7 +48,7 @@ html, body { margin: 0; padding: 0; }
 body {
   background: var(--fondo);
   color: var(--texto);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -159,7 +187,7 @@ header {
   padding-top: 1.5rem;
   border-bottom: 0;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--azul-medio);
 }
 
@@ -187,7 +215,7 @@ h1 {
   font-size: clamp(2rem, 4.2vw, 3rem);
   line-height: 1.12;
   letter-spacing: -0.03em;
-  font-weight: 650;
+  font-weight: 600;
   margin: 0 0 1.2rem;
   color: var(--azul);
   max-width: 22ch;
@@ -197,7 +225,7 @@ h2 {
   font-size: clamp(1.45rem, 2.8vw, 1.95rem);
   line-height: 1.22;
   letter-spacing: -0.025em;
-  font-weight: 650;
+  font-weight: 600;
   margin: 0 0 1.1rem;
   color: var(--texto);
   max-width: 26ch;
@@ -343,7 +371,7 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 
 .prueba .cifra {
   font-size: 2rem;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: -0.03em;
   color: var(--azul);
   line-height: 1.1;
@@ -452,7 +480,7 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
   background: var(--azul);
   color: #ffffff;
   font-size: 0.92rem;
-  font-weight: 650;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -487,7 +515,7 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 .destacado .dato {
   display: inline-block;
   font-size: 1.9rem;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: -0.03em;
   margin-bottom: 0.3rem;
 }
@@ -525,7 +553,7 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 .correo-grande {
   display: block;
   font-size: clamp(1.15rem, 3.4vw, 1.85rem);
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: -0.025em;
   color: var(--azul);
   word-break: break-word;
@@ -561,7 +589,7 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 .otro .flecha { font-size: 0.92rem; font-weight: 600; color: var(--azul-medio); }
 
 .volver { margin-top: 1.5rem; font-size: 0.98rem; }
-.volver a { color: var(--azul-medio); font-weight: 500; }
+.volver a { color: var(--azul-medio); font-weight: 600; }
 
 /* ---------- Fondos decorativos, dibujados con CSS ---------- */
 

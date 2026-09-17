@@ -9,13 +9,13 @@
 
 ## 2. La letra
 
-- [ ] 2.1 Crear la carpeta `fuentes/` y descargar `Geist-Regular.woff2` y `Geist-SemiBold.woff2`
-- [ ] 2.2 Guardar en `fuentes/` la licencia de Geist (SIL Open Font License) junto a los archivos
-- [ ] 2.3 Declarar las dos caras con `@font-face` en `estilos.css`, con `font-display: swap` y ruta relativa al proyecto
-- [ ] 2.4 Cambiar la pila tipográfica de `body` a Geist con las letras del sistema como reserva
-- [ ] 2.5 Revisar que en toda la hoja solo se usan los pesos 400 y 600, y corregir los 500 y 650 que hay hoy
-- [ ] 2.6 Comprobar en el navegador que la letra carga desde el proyecto y que no se hace ninguna petición a un servidor ajeno
-- [ ] 2.7 Commit de la fase
+- [x] 2.1 Crear la carpeta `fuentes/` y descargar `Geist-Regular.woff2` y `Geist-SemiBold.woff2`
+- [x] 2.2 Guardar en `fuentes/` la licencia de Geist (SIL Open Font License) junto a los archivos
+- [x] 2.3 Declarar las dos caras con `@font-face` en `estilos.css`, con `font-display: swap` y ruta relativa al proyecto
+- [x] 2.4 Cambiar la pila tipográfica de `body` a Geist con las letras del sistema como reserva
+- [x] 2.5 Revisar que en toda la hoja solo se usan los pesos 400 y 600, y corregir los 500 y 650 que hay hoy
+- [x] 2.6 Comprobar en el navegador que la letra carga desde el proyecto y que no se hace ninguna petición a un servidor ajeno
+- [x] 2.7 Commit de la fase
 
 ## 3. Fuera la decoración
 
