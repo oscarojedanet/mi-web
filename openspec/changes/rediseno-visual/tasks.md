@@ -28,14 +28,14 @@
 
 ## 4. La portada
 
-- [ ] 4.1 Cambiar el titular por la frase-resumen de `marca.md`, con el resto de la frase como entradilla
-- [ ] 4.2 Montar la ficha del curso en la cabecera de la portada: cinco lecciones en `<ol>` con el punto numerado, y la línea del feedback
-- [ ] 4.3 Rehacer las tarjetas de los tres cursos con "llegas con" y "sales con", tomados de `marca.md`, dejando sitio para el precio sin mostrarlo
-- [ ] 4.4 Pasar las alternativas de rejilla de tarjetas a lista con líneas finas, dejando el azul solo para "Lo que hago yo"
-- [ ] 4.5 Marcar el hueco de la foto de Oscar en el bloque de quién está detrás
-- [ ] 4.6 Comprobar que no ha entrado ni una frase que no esté en `marca.md`
-- [ ] 4.7 Comprobar la portada en el navegador a 390 y a 1440 píxeles
-- [ ] 4.8 Commit de la fase
+- [x] 4.1 Cambiar el titular por la frase-resumen de `marca.md`, con el resto de la frase como entradilla
+- [x] 4.2 Montar la ficha del curso en la cabecera de la portada: cinco lecciones en `<ol>` con el punto numerado, y la línea del feedback
+- [x] 4.3 Rehacer las tarjetas de los tres cursos con "llegas con" y "sales con", tomados de `marca.md`, dejando sitio para el precio sin mostrarlo
+- [x] 4.4 Pasar las alternativas de rejilla de tarjetas a lista con líneas finas, dejando el azul solo para "Lo que hago yo"
+- [x] 4.5 Marcar el hueco de la foto de Oscar en el bloque de quién está detrás
+- [x] 4.6 Comprobar que no ha entrado ni una frase que no esté en `marca.md`
+- [x] 4.7 Comprobar la portada en el navegador a 390 y a 1440 píxeles
+- [x] 4.8 Commit de la fase
 
 ## 5. Las páginas de curso, sobre mí y contacto
 
