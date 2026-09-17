@@ -32,13 +32,13 @@
 :root {
   color-scheme: light;
   --fondo: #ffffff;
-  --fondo-suave: #f5f7fa;
-  --texto: #10131a;
-  --texto-suave: #4d5766;
-  --azul: #16305c;
-  --azul-medio: #23508f;
-  --azul-claro: #e8eef8;
-  --linea: #e0e5ec;
+  --fondo-suave: #f6f7f9;
+  --texto: #0f1420;
+  --texto-suave: #525d6e;
+  --azul: #14305e;
+  --azul-medio: #1e4a8f;
+  --azul-claro: #e9eef7;
+  --linea: #e3e7ed;
   --sombra: 0 1px 2px rgba(16, 19, 26, 0.04), 0 8px 24px rgba(16, 19, 26, 0.06);
 }
 
@@ -305,15 +305,15 @@ section.bloque.suave { background: var(--fondo-suave); }
 
 .hero {
   padding: 5.5rem 0 4rem;
-  background:
-    radial-gradient(60rem 30rem at 75% -10%, var(--azul-claro), transparent 70%),
-    var(--fondo);
+  background: var(--fondo);
 }
 
 .hero-rejilla {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 3.5rem;
+  /* Con un solo hijo (la fase 4 traera la ficha del curso) el hero ocupa
+     su columna y no deja un hueco raro. */
   align-items: center;
 }
 
@@ -329,34 +329,9 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 
 .hero p:last-of-type { margin-bottom: 2rem; }
 
-.figura {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  border-radius: 14px;
-  background: linear-gradient(160deg, var(--azul) 0%, #0d1f3d 100%);
-  overflow: hidden;
-  box-shadow: var(--sombra);
-}
-
-.figura span {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-}
-
-.aro-1 { width: 62%; height: 0; padding-bottom: 62%; top: 12%; left: 12%; }
-.aro-2 { width: 86%; height: 0; padding-bottom: 86%; top: 26%; left: 32%; }
-.aro-3 { width: 40%; height: 0; padding-bottom: 40%; top: 54%; left: -6%; }
-
-.figura .lleno {
-  width: 16%;
-  height: 0;
-  padding-bottom: 16%;
-  top: 34%;
-  left: 35%;
-  background: #ffffff;
-  border: 0;
-}
+/* Aquí estaba .figura, el rectángulo azul con aros que ocupaba el mejor
+   sitio de la portada sin decir nada. Su hueco lo ocupa ahora la ficha del
+   curso, que sí cuenta algo. */
 
 /* ---------- Portada: pruebas ---------- */
 
@@ -446,9 +421,7 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 
 .cabecera-curso {
   padding: 2rem 0 3.5rem;
-  background:
-    radial-gradient(55rem 26rem at 70% -20%, var(--azul-claro), transparent 70%),
-    var(--fondo);
+  background: var(--fondo);
 }
 
 .cabecera-curso .entradilla {
@@ -591,80 +564,10 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 .volver { margin-top: 1.5rem; font-size: 0.98rem; }
 .volver a { color: var(--azul-medio); font-weight: 600; }
 
-/* ---------- Fondos decorativos, dibujados con CSS ---------- */
-
-.hero, .pruebas, .cursos, .contacto, .cabecera-curso, section.bloque.suave {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero > *, .pruebas > *, .cursos > *, .contacto > *,
-.cabecera-curso > *, section.bloque.suave > * {
-  position: relative;
-  z-index: 1;
-}
-
-.hero::before,
-.cabecera-curso::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(22, 48, 92, 0.18) 1px, transparent 1px);
-  background-size: 24px 24px;
-  -webkit-mask-image: radial-gradient(42rem 21rem at 80% 6%, #000, transparent 72%);
-  mask-image: radial-gradient(42rem 21rem at 80% 6%, #000, transparent 72%);
-  pointer-events: none;
-}
-
-.pruebas::before,
-.cursos::before,
-section.bloque.suave::before {
-  content: "";
-  position: absolute;
-  width: 27rem;
-  height: 27rem;
-  right: -9rem;
-  top: -11rem;
-  border-radius: 50%;
-  border: 1px solid rgba(22, 48, 92, 0.11);
-  box-shadow: inset 0 0 0 3.75rem rgba(22, 48, 92, 0.03);
-  pointer-events: none;
-}
-
-.cursos::before { left: -11rem; right: auto; top: auto; bottom: -13rem; }
-
-.contacto:not(.bloque)::before,
-.contacto:not(.bloque)::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  pointer-events: none;
-}
-
-.contacto:not(.bloque)::before { width: 30rem; height: 30rem; right: -8rem; top: -12rem; }
-.contacto:not(.bloque)::after { width: 18rem; height: 18rem; right: 4rem; bottom: -9rem; }
-
-.destacado { position: relative; overflow: hidden; }
-.destacado > * { position: relative; z-index: 1; }
-
-.destacado::before,
-.destacado::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  pointer-events: none;
-}
-
-.destacado::before { width: 24rem; height: 24rem; right: -7rem; top: -10rem; }
-.destacado::after { width: 14rem; height: 14rem; right: 3rem; bottom: -8rem; }
-
 /* ---------- Móvil ---------- */
 
 @media (max-width: 52rem) {
   .hero-rejilla { grid-template-columns: 1fr; gap: 2.5rem; }
-  .figura { max-width: 20rem; aspect-ratio: 1 / 1; }
   .lista-cursos { grid-template-columns: 1fr; }
   .alternativas { grid-template-columns: 1fr; }
   .pruebas-rejilla { grid-template-columns: 1fr; gap: 1.5rem; }

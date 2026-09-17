@@ -19,12 +19,12 @@
 
 ## 3. Fuera la decoración
 
-- [ ] 3.1 Borrar de `estilos.css` el bloque entero "Fondos decorativos, dibujados con CSS" y las reglas de apoyo que quedan huérfanas
-- [ ] 3.2 Borrar la regla `.figura` con sus cuatro aros, y el marcado de la figura en `index.html`
-- [ ] 3.3 Sustituir la separación entre secciones por líneas finas y cambios de fondo
-- [ ] 3.4 Ajustar los azules a `#14305e` y `#1e4a8f` y el gris de texto a `#525d6e` en las variables de `:root`
-- [ ] 3.5 Comprobar el contraste del texto claro sobre fondo azul y del texto secundario sobre fondo gris
-- [ ] 3.6 Commit de la fase
+- [x] 3.1 Borrar de `estilos.css` el bloque entero "Fondos decorativos, dibujados con CSS" y las reglas de apoyo que quedan huérfanas
+- [x] 3.2 Borrar la regla `.figura` con sus cuatro aros, y el marcado de la figura en `index.html`
+- [x] 3.3 Sustituir la separación entre secciones por líneas finas y cambios de fondo
+- [x] 3.4 Ajustar los azules a `#14305e` y `#1e4a8f` y el gris de texto a `#525d6e` en las variables de `:root`
+- [x] 3.5 Comprobar el contraste del texto claro sobre fondo azul y del texto secundario sobre fondo gris
+- [x] 3.6 Commit de la fase
 
 ## 4. La portada
 
