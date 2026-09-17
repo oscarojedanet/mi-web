@@ -198,7 +198,22 @@ footer {
   font-size: 0.92rem;
 }
 
-footer .barra { padding: 0; flex-wrap: wrap; }
+footer .barra { padding: 0 0 1.5rem; flex-wrap: wrap; gap: 1.5rem; }
+footer .marca { font-size: 1rem; }
+footer .barra > a[href^="mailto:"] { color: var(--azul-medio); font-weight: 600; text-decoration: none; }
+footer .barra > a[href^="mailto:"]:hover { text-decoration: underline; }
+
+.raya-pie { height: 1px; background: var(--linea); }
+
+.letra-pequena {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
 footer nav { display: flex; gap: 1.2rem; flex-wrap: wrap; }
 footer nav a { color: var(--texto-suave); text-decoration: none; }
 footer nav a:hover { color: var(--azul-medio); }
@@ -398,7 +413,7 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
    Ocupa el sitio donde estaba la figura decorativa. Ensena de que se
    compone el curso: las cinco lecciones y como funciona el feedback. */
 
-.marco-ficha { background: var(--fondo-suave); border-radius: 20px; padding: 2.2rem; }
+.marco-ficha { background: var(--fondo-suave); border-radius: 20px; padding: 1.5rem; }
 
 .ficha-curso {
   background: var(--fondo);
@@ -408,12 +423,17 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
   box-shadow: var(--sombra);
 }
 
-.ficha-cabeza { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
-.ficha-cabeza .titulillo { margin: 0 0 0.3rem; }
+/* El rotulillo y la etiqueta comparten fila; el titulo se queda con el
+   ancho entero, que si no se parte en dos lineas cortas. */
+/* El rotulillo no se parte nunca; si no cabe junto a la etiqueta, la
+   etiqueta baja a la linea siguiente. Asi en el movil la tarjeta puede
+   encoger hasta el ancho de la pantalla. */
+.ficha-cabeza { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem 1rem; flex-wrap: wrap; }
+.ficha-cabeza .titulillo { margin: 0; white-space: nowrap; }
 
-.ficha-cabeza h2 {
+.ficha-titulo {
   font-size: 1.2rem;
-  margin: 0;
+  margin: 0.7rem 0 0;
   color: var(--texto);
   max-width: none;
   letter-spacing: -0.015em;
@@ -622,6 +642,94 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 
 .nota-lecciones { margin-top: 1.5rem; }
 
+
+/* ---------- Paginas de curso: el par dolor / deseo ----------
+
+   Se leen de una vez, uno al lado del otro. El dolor primero: el cliente y
+   su problema van antes que el servicio. */
+
+.par { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: stretch; }
+
+.par > * { margin: 0; }
+
+.llegas {
+  background: var(--fondo);
+  border: 1px solid var(--linea);
+  border-radius: 14px;
+  padding: 2rem;
+}
+
+.sales {
+  background: var(--azul);
+  border-radius: 14px;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+.llegas h2, .sales h2 { max-width: none; }
+.sales h2 { color: #ffffff; }
+.sales .titulillo { color: rgba(255, 255, 255, 0.76); }
+.sales p { color: rgba(255, 255, 255, 0.84); }
+.sales p strong { color: #ffffff; }
+.llegas p:last-child, .sales p:last-child { margin-bottom: 0; }
+
+/* ---------- Paginas de curso: la ficha de lo que incluye ----------
+
+   Va a la altura del contenido, no escondida al final, para que quien ya
+   se ha decidido no tenga que seguir bajando. */
+
+.curso-rejilla {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 21rem;
+  gap: 4rem;
+  align-items: start;
+}
+
+.ficha-incluye {
+  background: var(--fondo);
+  border: 1px solid var(--linea);
+  border-radius: 14px;
+  padding: 1.75rem;
+  box-shadow: var(--sombra);
+  position: sticky;
+  top: 6rem;
+}
+
+.ficha-incluye h2 {
+  font-size: 1.25rem;
+  margin: 0 0 1.2rem;
+  color: var(--azul);
+  max-width: none;
+}
+
+.ficha-incluye .titulillo { margin: 0 0 0.3rem; }
+
+.incluye { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.85rem; }
+
+.incluye li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.98rem;
+  color: var(--texto);
+}
+
+.incluye .visto {
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background: var(--azul-claro);
+  color: var(--azul);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.ficha-incluye .boton { width: 100%; text-align: center; }
+.ficha-incluye .apunte { font-size: 0.88rem; color: var(--texto-suave); text-align: center; margin: 0.8rem 0 0; }
+
 /* ---------- Bloque destacado en azul ---------- */
 
 .destacado {
@@ -721,6 +829,9 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
   .hero-rejilla { grid-template-columns: 1fr; gap: 2.5rem; }
   .lista-cursos { grid-template-columns: 1fr; }
   .detras-rejilla { grid-template-columns: 1fr; gap: 2rem; }
+  .par { grid-template-columns: 1fr; }
+  .curso-rejilla { grid-template-columns: 1fr; gap: 2.5rem; }
+  .ficha-incluye { position: static; }
   .alternativa { grid-template-columns: 1fr; gap: 0.35rem; }
   .pruebas-rejilla { grid-template-columns: 1fr; gap: 1.5rem; }
   .otros { grid-template-columns: 1fr; }
@@ -739,6 +850,7 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
   section.bloque { padding: 2.75rem 0; }
   .destacado { padding: 1.5rem; }
   .marco-ficha { padding: 1.25rem; }
+  .llegas, .sales, .ficha-incluye { padding: 1.5rem; }
   .alternativa.propia { padding: 1.5rem; }
   .boton { width: 100%; text-align: center; }
   footer .barra { flex-direction: column; align-items: flex-start; gap: 0.8rem; }

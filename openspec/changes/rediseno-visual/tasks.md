@@ -39,17 +39,17 @@
 
 ## 5. Las páginas de curso, sobre mí y contacto
 
-- [ ] 5.1 Poner "con qué llegas" y "con qué sales" cara a cara en las tres páginas de curso
-- [ ] 5.2 Montar la ficha de lo que incluye el curso, a la altura del contenido, con la llamada a escribir y sin precio
-- [ ] 5.3 Aplicar el estilo nuevo de lecciones numeradas en `curso-marketing.html`
-- [ ] 5.4 Actualizar `sobre-mi.html` y `contacto.html` con las piezas nuevas
-- [ ] 5.5 Poner el pie nuevo en los seis archivos
-- [ ] 5.6 Comprobar que desde cualquier página se llega a cualquier otra sin usar el botón atrás
-- [ ] 5.7 Comprobar las seis páginas en el navegador a 390 y a 1440 píxeles
-- [ ] 5.8 Commit de la fase
+- [x] 5.1 Poner "con qué llegas" y "con qué sales" cara a cara en las tres páginas de curso
+- [x] 5.2 Montar la ficha de lo que incluye el curso, a la altura del contenido, con la llamada a escribir y sin precio
+- [x] 5.3 Aplicar el estilo nuevo de lecciones numeradas en `curso-marketing.html`
+- [x] 5.4 Actualizar `sobre-mi.html` y `contacto.html` con las piezas nuevas
+- [x] 5.5 Poner el pie nuevo en los seis archivos
+- [x] 5.6 Comprobar que desde cualquier página se llega a cualquier otra sin usar el botón atrás
+- [x] 5.7 Comprobar las seis páginas en el navegador a 390 y a 1440 píxeles
+- [x] 5.8 Commit de la fase
 
 ## 6. Cierre
 
-- [ ] 6.1 Repasar que ningún archivo HTML lleva bloque `<style>` propio ni enlaza nada de fuera del proyecto
-- [ ] 6.2 Comprobar que los títulos, las descripciones y el favicon de cada página siguen intactos
+- [x] 6.1 Repasar que ningún archivo HTML lleva bloque `<style>` propio ni enlaza nada de fuera del proyecto
+- [x] 6.2 Comprobar que los títulos, las descripciones y el favicon de cada página siguen intactos
 - [ ] 6.3 Enseñar el resultado a Oscar antes de archivar el cambio
