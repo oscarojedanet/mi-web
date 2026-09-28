@@ -1,44 +1,16 @@
 /* Estilos comunes de la web de Oscar Ojeda.
    Un solo sitio para todo: cambiar un color aquí lo cambia en las seis páginas. */
 
-/* ---------- La letra ----------
-
-   Geist, licencia SIL Open Font License, guardada en fuentes/ dentro del
-   propio proyecto. No se enlaza desde el servidor de nadie: el día que lo
-   muevan, la web se seguiría viendo igual.
-
-   Dos pesos y no más: 400 para el texto, 600 para los titulares. Cada
-   archivo son 40 KB, y con estos dos hay contraste de sobra.
-
-   font-display: swap significa que el texto se lee con la letra del
-   sistema mientras Geist se descarga, en vez de quedarse invisible. */
-
-@font-face {
-  font-family: "Geist";
-  src: url("fuentes/Geist-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Geist";
-  src: url("fuentes/Geist-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   color-scheme: light;
   --fondo: #ffffff;
-  --fondo-suave: #f6f7f9;
-  --texto: #0f1420;
-  --texto-suave: #525d6e;
-  --azul: #14305e;
-  --azul-medio: #1e4a8f;
-  --azul-claro: #e9eef7;
-  --linea: #e3e7ed;
+  --fondo-suave: #f5f7fa;
+  --texto: #10131a;
+  --texto-suave: #4d5766;
+  --azul: #16305c;
+  --azul-medio: #23508f;
+  --azul-claro: #e8eef8;
+  --linea: #e0e5ec;
   --sombra: 0 1px 2px rgba(16, 19, 26, 0.04), 0 8px 24px rgba(16, 19, 26, 0.06);
 }
 
@@ -48,7 +20,7 @@ html, body { margin: 0; padding: 0; }
 body {
   background: var(--fondo);
   color: var(--texto);
-  font-family: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -60,14 +32,12 @@ a { color: inherit; }
 
 /* ---------- Cabecera y pie ---------- */
 
-/* Fondo sólido y sin desenfoque. Además de ser decoración de más, el
-   desenfoque hacía que el panel del menú se colocara dentro de la cabecera
-   en vez de sobre toda la pantalla. */
 header {
   border-bottom: 1px solid var(--linea);
   position: sticky;
   top: 0;
-  background: var(--fondo);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
   z-index: 10;
 }
 
@@ -97,99 +67,10 @@ header {
   flex-shrink: 0;
 }
 
-/* Menú de pantallas anchas: los enlaces en línea. */
-
-.menu-ancho { display: flex; gap: 1.35rem; font-size: 0.95rem; }
-.menu-ancho a { color: var(--texto-suave); text-decoration: none; white-space: nowrap; }
-.menu-ancho a:hover { color: var(--azul-medio); }
-.menu-ancho a.activo { color: var(--azul); font-weight: 600; }
-
-.boton-cabecera {
-  display: inline-flex;
-  align-items: center;
-  height: 44px;
-  padding: 0 1rem;
-  border-radius: 8px;
-  border: 1px solid var(--linea);
-  background: var(--fondo);
-  color: var(--azul);
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.boton-cabecera:hover { border-color: var(--azul); }
-
-/* Menú de pantallas estrechas. Es un <details>: el navegador ya sabe abrirlo
-   y cerrarlo, se maneja con el teclado y los lectores de pantalla lo anuncian.
-   Por eso no hace falta ni una línea de JavaScript. */
-
-.menu-movil { display: none; }
-
-/* La marca y el botón se quedan por encima del panel, para que la cabecera
-   siga visible y se pueda cerrar el menú desde donde se abrió. */
-.barra .marca, .menu-movil > summary { position: relative; z-index: 1; }
-
-.menu-movil > summary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  height: 44px;
-  padding: 0 0.9rem;
-  border-radius: 8px;
-  border: 1px solid var(--linea);
-  background: var(--fondo);
-  color: var(--azul);
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  list-style: none;
-}
-
-/* Quitar el triángulo que el navegador pone por defecto. */
-.menu-movil > summary::-webkit-details-marker { display: none; }
-.menu-movil > summary::marker { content: ""; }
-
-.menu-movil > summary .barras,
-.menu-movil > summary .aspa { display: block; }
-.menu-movil[open] > summary .barras { display: none; }
-.menu-movil:not([open]) > summary .aspa { display: none; }
-
-.menu-movil > nav {
-  position: fixed;
-  inset: 0;
-  background: var(--fondo);
-  padding: 5.5rem 1.5rem 2rem;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.menu-movil > nav a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.05rem 0;
-  border-bottom: 1px solid var(--linea);
-  color: var(--texto);
-  text-decoration: none;
-  font-size: 1.35rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-.menu-movil > nav a:hover { color: var(--azul-medio); }
-.menu-movil > nav a.activo { color: var(--azul); }
-
-.menu-movil > nav .correo-menu {
-  margin-top: auto;
-  padding-top: 1.5rem;
-  border-bottom: 0;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--azul-medio);
-}
+.barra nav { display: flex; gap: 1.35rem; font-size: 0.95rem; }
+.barra nav a { color: var(--texto-suave); text-decoration: none; white-space: nowrap; }
+.barra nav a:hover { color: var(--azul-medio); }
+.barra nav a.activo { color: var(--azul); font-weight: 600; }
 
 footer {
   padding: 2rem 0;
@@ -198,22 +79,7 @@ footer {
   font-size: 0.92rem;
 }
 
-footer .barra { padding: 0 0 1.5rem; flex-wrap: wrap; gap: 1.5rem; }
-footer .marca { font-size: 1rem; }
-footer .barra > a[href^="mailto:"] { color: var(--azul-medio); font-weight: 600; text-decoration: none; }
-footer .barra > a[href^="mailto:"]:hover { text-decoration: underline; }
-
-.raya-pie { height: 1px; background: var(--linea); }
-
-.letra-pequena {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  padding-top: 1.5rem;
-  font-size: 0.9rem;
-  color: var(--texto-suave);
-}
+footer .barra { padding: 0; flex-wrap: wrap; }
 footer nav { display: flex; gap: 1.2rem; flex-wrap: wrap; }
 footer nav a { color: var(--texto-suave); text-decoration: none; }
 footer nav a:hover { color: var(--azul-medio); }
@@ -230,7 +96,7 @@ h1 {
   font-size: clamp(2rem, 4.2vw, 3rem);
   line-height: 1.12;
   letter-spacing: -0.03em;
-  font-weight: 600;
+  font-weight: 650;
   margin: 0 0 1.2rem;
   color: var(--azul);
   max-width: 22ch;
@@ -240,7 +106,7 @@ h2 {
   font-size: clamp(1.45rem, 2.8vw, 1.95rem);
   line-height: 1.22;
   letter-spacing: -0.025em;
-  font-weight: 600;
+  font-weight: 650;
   margin: 0 0 1.1rem;
   color: var(--texto);
   max-width: 26ch;
@@ -320,15 +186,15 @@ section.bloque.suave { background: var(--fondo-suave); }
 
 .hero {
   padding: 5.5rem 0 4rem;
-  background: var(--fondo);
+  background:
+    radial-gradient(60rem 30rem at 75% -10%, var(--azul-claro), transparent 70%),
+    var(--fondo);
 }
 
 .hero-rejilla {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 3.5rem;
-  /* Con un solo hijo (la fase 4 traera la ficha del curso) el hero ocupa
-     su columna y no deja un hueco raro. */
   align-items: center;
 }
 
@@ -344,9 +210,34 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 
 .hero p:last-of-type { margin-bottom: 2rem; }
 
-/* Aquí estaba .figura, el rectángulo azul con aros que ocupaba el mejor
-   sitio de la portada sin decir nada. Su hueco lo ocupa ahora la ficha del
-   curso, que sí cuenta algo. */
+.figura {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 14px;
+  background: linear-gradient(160deg, var(--azul) 0%, #0d1f3d 100%);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.figura span {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.aro-1 { width: 62%; height: 0; padding-bottom: 62%; top: 12%; left: 12%; }
+.aro-2 { width: 86%; height: 0; padding-bottom: 86%; top: 26%; left: 32%; }
+.aro-3 { width: 40%; height: 0; padding-bottom: 40%; top: 54%; left: -6%; }
+
+.figura .lleno {
+  width: 16%;
+  height: 0;
+  padding-bottom: 16%;
+  top: 34%;
+  left: 35%;
+  background: #ffffff;
+  border: 0;
+}
 
 /* ---------- Portada: pruebas ---------- */
 
@@ -361,7 +252,7 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 
 .prueba .cifra {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: -0.03em;
   color: var(--azul);
   line-height: 1.1;
@@ -373,163 +264,27 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 
 /* ---------- Portada: alternativas ---------- */
 
-/* Lista con lineas finas en vez de rejilla de tarjetas: menos cajas y la
-   misma informacion. El azul queda reservado para la ultima, la propia. */
-
-.alternativas { display: flex; flex-direction: column; }
+.alternativas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 
 .alternativa {
-  display: grid;
-  grid-template-columns: 14rem minmax(0, 1fr);
-  gap: 2rem;
-  padding: 1.35rem 0;
-  border-top: 1px solid var(--linea);
-}
-
-.alternativa:last-of-type { border-bottom: 1px solid var(--linea); }
-.alternativa h3 { font-size: 1.05rem; font-weight: 600; margin: 0; }
-.alternativa p { margin: 0; color: var(--texto-suave); font-size: 1.02rem; }
-
-.alternativa.propia {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  margin-top: 2rem;
-  padding: 2rem;
-  background: var(--azul);
-  border: 0;
-  border-radius: 12px;
-  color: #ffffff;
-}
-
-.alternativa.propia .titulo-propia { display: flex; align-items: center; gap: 0.7rem; }
-.alternativa.propia .punto { background: #ffffff; }
-.alternativa.propia h3 { color: #ffffff; font-size: 1.15rem; }
-.alternativa.propia p { color: rgba(255, 255, 255, 0.84); }
-
-
-/* ---------- La ficha del curso ----------
-
-   Ocupa el sitio donde estaba la figura decorativa. Ensena de que se
-   compone el curso: las cinco lecciones y como funciona el feedback. */
-
-.marco-ficha { background: var(--fondo-suave); border-radius: 20px; padding: 1.5rem; }
-
-.ficha-curso {
+  padding: 1.5rem;
   background: var(--fondo);
   border: 1px solid var(--linea);
-  border-radius: 14px;
-  padding: 1.6rem;
-  box-shadow: var(--sombra);
+  border-radius: 10px;
 }
 
-/* El rotulillo y la etiqueta comparten fila; el titulo se queda con el
-   ancho entero, que si no se parte en dos lineas cortas. */
-/* El rotulillo no se parte nunca; si no cabe junto a la etiqueta, la
-   etiqueta baja a la linea siguiente. Asi en el movil la tarjeta puede
-   encoger hasta el ancho de la pantalla. */
-.ficha-cabeza { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem 1rem; flex-wrap: wrap; }
-.ficha-cabeza .titulillo { margin: 0; white-space: nowrap; }
+.alternativa h3 { font-size: 1.02rem; font-weight: 600; margin: 0 0 0.4rem; }
+.alternativa p { margin: 0; color: var(--texto-suave); font-size: 0.98rem; }
 
-.ficha-titulo {
-  font-size: 1.2rem;
-  margin: 0.7rem 0 0;
-  color: var(--texto);
-  max-width: none;
-  letter-spacing: -0.015em;
-}
-
-.marbete {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--azul);
-  background: var(--azul-claro);
-  border-radius: 100px;
-  padding: 0.3rem 0.7rem;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.raya { height: 1px; background: var(--linea); margin: 1.2rem 0; }
-
-.indice { margin: 0; padding: 0; list-style: none; counter-reset: paso; }
-
-.indice li {
-  counter-increment: paso;
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--texto);
-  padding: 0.42rem 0;
-}
-
-/* El punto de la marca, trabajando: es la numeracion de las lecciones. */
-.indice li::before {
-  content: counter(paso);
-  width: 1.85rem;
-  height: 1.85rem;
-  border-radius: 50%;
-  background: var(--texto);
-  color: #ffffff;
-  font-size: 0.8rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.ficha-pie { display: flex; align-items: center; gap: 0.75rem; }
-
-.ficha-pie .inicial {
-  width: 2.1rem;
-  height: 2.1rem;
-  border-radius: 50%;
+.alternativa.propia {
   background: var(--azul);
+  border-color: var(--azul);
   color: #ffffff;
-  font-size: 0.88rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  grid-column: 1 / -1;
 }
 
-.ficha-pie p { margin: 0; font-size: 0.95rem; color: var(--texto-suave); }
-.ficha-pie strong { color: var(--texto); font-weight: 600; }
-
-/* ---------- Hueco para la foto de Oscar ----------
-
-   A proposito: mejor un hueco honesto que una foto de banco. Sale en
-   cuanto haya retrato de verdad. */
-
-.hueco-foto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  text-align: center;
-  min-height: 22rem;
-  background: var(--azul-claro);
-  border-radius: 16px;
-  padding: 2rem;
-}
-
-.hueco-foto .punto { width: 15px; height: 15px; }
-.hueco-foto span { font-size: 0.95rem; color: var(--texto-suave); max-width: 15rem; }
-.hueco-foto .rotulo { color: var(--azul); font-weight: 600; }
-
-/* ---------- Quien esta detras ---------- */
-
-.detras-rejilla {
-  display: grid;
-  grid-template-columns: 20rem minmax(0, 1fr);
-  gap: 3.5rem;
-  align-items: center;
-}
+.alternativa.propia h3 { color: #ffffff; }
+.alternativa.propia p { color: rgba(255, 255, 255, 0.82); }
 
 /* ---------- Tarjetas de curso ---------- */
 
@@ -551,48 +306,30 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 
 .curso:hover { border-color: var(--azul-medio); }
 
-.curso .titulillo { margin: 0 0 0.3rem; }
-
 .curso h3 {
-  font-size: 1.2rem;
+  font-size: 1.12rem;
   font-weight: 600;
-  margin: 0 0 1.2rem;
+  margin: 0 0 0.4rem;
   color: var(--azul);
   letter-spacing: -0.015em;
 }
 
-/* Con que llegas y con que sales, que es lo que de verdad ayuda a elegir.
-   Sale del apartado "Los cursos" de marca.md. */
-
-.viaje { display: flex; flex-direction: column; gap: 0.9rem; flex-grow: 1; }
-
-.viaje div { padding-top: 0.9rem; border-top: 1px solid var(--linea); }
-
-.viaje dt {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.curso p {
+  margin: 0 0 1.2rem;
   color: var(--texto-suave);
-  margin: 0 0 0.2rem;
+  font-size: 0.98rem;
+  flex-grow: 1;
 }
 
-.viaje dd { margin: 0; font-size: 0.98rem; color: var(--texto-suave); }
-
-.curso .flecha {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--azul-medio);
-  margin-top: 1.2rem;
-  padding-top: 1.1rem;
-  border-top: 1px solid var(--linea);
-}
+.curso .flecha { font-size: 0.92rem; font-weight: 600; color: var(--azul-medio); }
 
 /* ---------- Páginas de curso ---------- */
 
 .cabecera-curso {
   padding: 2rem 0 3.5rem;
-  background: var(--fondo);
+  background:
+    radial-gradient(55rem 26rem at 70% -20%, var(--azul-claro), transparent 70%),
+    var(--fondo);
 }
 
 .cabecera-curso .entradilla {
@@ -624,7 +361,7 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
   background: var(--azul);
   color: #ffffff;
   font-size: 0.92rem;
-  font-weight: 600;
+  font-weight: 650;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -641,94 +378,6 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 .leccion p { margin: 0; font-size: 1rem; color: var(--texto-suave); }
 
 .nota-lecciones { margin-top: 1.5rem; }
-
-
-/* ---------- Paginas de curso: el par dolor / deseo ----------
-
-   Se leen de una vez, uno al lado del otro. El dolor primero: el cliente y
-   su problema van antes que el servicio. */
-
-.par { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: stretch; }
-
-.par > * { margin: 0; }
-
-.llegas {
-  background: var(--fondo);
-  border: 1px solid var(--linea);
-  border-radius: 14px;
-  padding: 2rem;
-}
-
-.sales {
-  background: var(--azul);
-  border-radius: 14px;
-  padding: 2rem;
-  color: #ffffff;
-}
-
-.llegas h2, .sales h2 { max-width: none; }
-.sales h2 { color: #ffffff; }
-.sales .titulillo { color: rgba(255, 255, 255, 0.76); }
-.sales p { color: rgba(255, 255, 255, 0.84); }
-.sales p strong { color: #ffffff; }
-.llegas p:last-child, .sales p:last-child { margin-bottom: 0; }
-
-/* ---------- Paginas de curso: la ficha de lo que incluye ----------
-
-   Va a la altura del contenido, no escondida al final, para que quien ya
-   se ha decidido no tenga que seguir bajando. */
-
-.curso-rejilla {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 21rem;
-  gap: 4rem;
-  align-items: start;
-}
-
-.ficha-incluye {
-  background: var(--fondo);
-  border: 1px solid var(--linea);
-  border-radius: 14px;
-  padding: 1.75rem;
-  box-shadow: var(--sombra);
-  position: sticky;
-  top: 6rem;
-}
-
-.ficha-incluye h2 {
-  font-size: 1.25rem;
-  margin: 0 0 1.2rem;
-  color: var(--azul);
-  max-width: none;
-}
-
-.ficha-incluye .titulillo { margin: 0 0 0.3rem; }
-
-.incluye { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.85rem; }
-
-.incluye li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.7rem;
-  font-size: 0.98rem;
-  color: var(--texto);
-}
-
-.incluye .visto {
-  width: 1.3rem;
-  height: 1.3rem;
-  border-radius: 50%;
-  background: var(--azul-claro);
-  color: var(--azul);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 0.15rem;
-}
-
-.ficha-incluye .boton { width: 100%; text-align: center; }
-.ficha-incluye .apunte { font-size: 0.88rem; color: var(--texto-suave); text-align: center; margin: 0.8rem 0 0; }
 
 /* ---------- Bloque destacado en azul ---------- */
 
@@ -747,7 +396,7 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 .destacado .dato {
   display: inline-block;
   font-size: 1.9rem;
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: -0.03em;
   margin-bottom: 0.3rem;
 }
@@ -785,7 +434,7 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 .correo-grande {
   display: block;
   font-size: clamp(1.15rem, 3.4vw, 1.85rem);
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: -0.025em;
   color: var(--azul);
   word-break: break-word;
@@ -821,27 +470,91 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
 .otro .flecha { font-size: 0.92rem; font-weight: 600; color: var(--azul-medio); }
 
 .volver { margin-top: 1.5rem; font-size: 0.98rem; }
-.volver a { color: var(--azul-medio); font-weight: 600; }
+.volver a { color: var(--azul-medio); font-weight: 500; }
+
+/* ---------- Fondos decorativos, dibujados con CSS ---------- */
+
+.hero, .pruebas, .cursos, .contacto, .cabecera-curso, section.bloque.suave {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero > *, .pruebas > *, .cursos > *, .contacto > *,
+.cabecera-curso > *, section.bloque.suave > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero::before,
+.cabecera-curso::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(22, 48, 92, 0.18) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(42rem 21rem at 80% 6%, #000, transparent 72%);
+  mask-image: radial-gradient(42rem 21rem at 80% 6%, #000, transparent 72%);
+  pointer-events: none;
+}
+
+.pruebas::before,
+.cursos::before,
+section.bloque.suave::before {
+  content: "";
+  position: absolute;
+  width: 27rem;
+  height: 27rem;
+  right: -9rem;
+  top: -11rem;
+  border-radius: 50%;
+  border: 1px solid rgba(22, 48, 92, 0.11);
+  box-shadow: inset 0 0 0 3.75rem rgba(22, 48, 92, 0.03);
+  pointer-events: none;
+}
+
+.cursos::before { left: -11rem; right: auto; top: auto; bottom: -13rem; }
+
+.contacto:not(.bloque)::before,
+.contacto:not(.bloque)::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+}
+
+.contacto:not(.bloque)::before { width: 30rem; height: 30rem; right: -8rem; top: -12rem; }
+.contacto:not(.bloque)::after { width: 18rem; height: 18rem; right: 4rem; bottom: -9rem; }
+
+.destacado { position: relative; overflow: hidden; }
+.destacado > * { position: relative; z-index: 1; }
+
+.destacado::before,
+.destacado::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+.destacado::before { width: 24rem; height: 24rem; right: -7rem; top: -10rem; }
+.destacado::after { width: 14rem; height: 14rem; right: 3rem; bottom: -8rem; }
 
 /* ---------- Móvil ---------- */
 
 @media (max-width: 52rem) {
   .hero-rejilla { grid-template-columns: 1fr; gap: 2.5rem; }
+  .figura { max-width: 20rem; aspect-ratio: 1 / 1; }
   .lista-cursos { grid-template-columns: 1fr; }
-  .detras-rejilla { grid-template-columns: 1fr; gap: 2rem; }
-  .par { grid-template-columns: 1fr; }
-  .curso-rejilla { grid-template-columns: 1fr; gap: 2.5rem; }
-  .ficha-incluye { position: static; }
-  .alternativa { grid-template-columns: 1fr; gap: 0.35rem; }
+  .alternativas { grid-template-columns: 1fr; }
   .pruebas-rejilla { grid-template-columns: 1fr; gap: 1.5rem; }
   .otros { grid-template-columns: 1fr; }
+  .barra nav { gap: 1rem; font-size: 0.9rem; }
+}
 
-  /* Por debajo de este ancho los enlaces ya no caben en línea: se esconde el
-     menú ancho y aparece el botón que despliega el panel. Nunca se esconde el
-     menú sin dejar forma de abrirlo. */
-  .menu-ancho { display: none; }
-  .boton-cabecera { display: none; }
-  .menu-movil { display: block; }
+@media (max-width: 40rem) {
+  .barra nav { display: none; }
 }
 
 @media (max-width: 34rem) {
@@ -849,9 +562,6 @@ h1 .remate { display: block; color: var(--texto); margin-top: 0.5rem; }
   .hero { padding: 3.5rem 0 3rem; }
   section.bloque { padding: 2.75rem 0; }
   .destacado { padding: 1.5rem; }
-  .marco-ficha { padding: 1.25rem; }
-  .llegas, .sales, .ficha-incluye { padding: 1.5rem; }
-  .alternativa.propia { padding: 1.5rem; }
   .boton { width: 100%; text-align: center; }
   footer .barra { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
 }
